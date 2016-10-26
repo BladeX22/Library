@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PageContent = (function () {
-    function PageContent() {
+var book_manager_1 = require("./book-manager");
+var BookService = (function () {
+    function BookService() {
     }
-    PageContent = __decorate([
-        core_1.Component({
-            selector: 'page_content',
-            templateUrl: 'app/content.html',
-            styleUrls: ['app/library-homepage.css']
-        }), 
+    BookService.prototype.getBooks = function () {
+        return Promise.resolve(book_manager_1.BOOKS);
+    };
+    BookService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], PageContent);
-    return PageContent;
+    ], BookService);
+    return BookService;
 }());
-exports.PageContent = PageContent;
-//# sourceMappingURL=app.page-content.js.map
+exports.BookService = BookService;
+//# sourceMappingURL=book.service.js.map

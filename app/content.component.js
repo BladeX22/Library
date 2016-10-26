@@ -9,16 +9,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var book_service_1 = require("./book.service");
 var ContentComponent = (function () {
-    function ContentComponent() {
+    function ContentComponent(bookService) {
+        this.bookService = bookService;
     }
+    ContentComponent.prototype.getBooks = function () {
+        var _this = this;
+        this.bookService.getBooks().then(function (books) { return _this.books = books; });
+    };
+    ContentComponent.prototype.findAllBooksForCategory = function (category) {
+        var books;
+        for (var _i = 0, _a = this.books; _i < _a.length; _i++) {
+            var book = _a[_i];
+            if (book.category == category) {
+                books.push(book);
+            }
+        }
+        console.log(books);
+    };
+    ContentComponent.prototype.ngOnInit = function () {
+        this.getBooks();
+    };
     ContentComponent = __decorate([
         core_1.Component({
             selector: 'page_content',
             templateUrl: 'app/content.html',
-            styleUrls: ['app/library-homepage.css']
+            styleUrls: ['app/library-homepage.css'],
+            providers: [book_service_1.BookService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [book_service_1.BookService])
     ], ContentComponent);
     return ContentComponent;
 }());
