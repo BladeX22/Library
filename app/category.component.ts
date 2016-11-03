@@ -6,6 +6,7 @@ import {Category} from "./category";
 @Component({
     selector: 'categories',
     templateUrl: 'app/category.component.html',
+    styleUrls: [ 'app/category.component.css' ],
     providers: [ CategoryService ],
 })
 
