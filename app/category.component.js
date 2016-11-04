@@ -31,7 +31,6 @@ var CategoryComponent = (function () {
         core_1.Component({
             selector: 'categories',
             templateUrl: 'app/category.component.html',
-            styleUrls: ['app/category.component.css'],
             providers: [category_service_1.CategoryService],
         }), 
         __metadata('design:paramtypes', [category_service_1.CategoryService])
