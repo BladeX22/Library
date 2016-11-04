@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var book_service_1 = require("./book.service");
 var ContentComponent = (function () {
     function ContentComponent() {
     }
@@ -17,6 +18,7 @@ var ContentComponent = (function () {
             selector: 'page_content',
             templateUrl: 'app/content.html',
             styleUrls: ['app/library-homepage.css'],
+            providers: [book_service_1.BookService]
         }), 
         __metadata('design:paramtypes', [])
     ], ContentComponent);
