@@ -13,6 +13,8 @@ var book_service_1 = require("./book.service");
 var ContentComponent = (function () {
     function ContentComponent() {
     }
+    ContentComponent.prototype.ngOnInit = function () {
+    };
     ContentComponent = __decorate([
         core_1.Component({
             selector: 'page_content',

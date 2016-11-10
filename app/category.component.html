@@ -1,6 +1,6 @@
 <div class="col-md-3" *ngIf="categories">
     <p class="lead">Gatunki</p>
     <div class="list-group" *ngFor="let category of categories" (click)="onSelect(category)">
-        <a href="#" class="list-group-item">{{ category.name }}</a>
+        <a class="list-group-item">{{ category.name }}</a>
     </div>
 </div>

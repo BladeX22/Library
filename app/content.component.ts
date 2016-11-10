@@ -12,5 +12,6 @@ import {Book} from "./book";
 export class ContentComponent implements OnInit{
     popularBooks: Book[];
 
-
+    ngOnInit(): void {
+    }
 }

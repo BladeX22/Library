@@ -36,7 +36,7 @@ var BookComponent = (function () {
             selector: 'books',
             templateUrl: 'app/book.component.html',
             styleUrls: ['app/library-homepage.css'],
-            providers: [book_service_1.BookService]
+            providers: [book_service_1.BookService],
         }), 
         __metadata('design:paramtypes', [book_service_1.BookService])
     ], BookComponent);

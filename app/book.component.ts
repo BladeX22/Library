@@ -7,7 +7,7 @@ import {Category} from "./category";
     selector: 'books',
     templateUrl: 'app/book.component.html',
     styleUrls: [ 'app/library-homepage.css' ],
-    providers: [ BookService ]
+    providers: [ BookService ],
 })
 
 export class BookComponent implements OnInit{
