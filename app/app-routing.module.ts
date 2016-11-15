@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {ContentComponent} from "./content.component";
 import {BookComponent} from "./book.component";
+import {CategoryComponent} from "./category.component";
 
 const routes = [
     {
@@ -16,7 +17,7 @@ const routes = [
     },
     {
         path: 'offer',
-        component: BookComponent
+        component: CategoryComponent
     }
 ];
 

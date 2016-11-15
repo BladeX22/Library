@@ -17,7 +17,7 @@ var ContentComponent = (function () {
     };
     ContentComponent = __decorate([
         core_1.Component({
-            selector: 'page_content',
+            selector: 'content',
             templateUrl: 'app/content.html',
             styleUrls: ['app/library-homepage.css'],
             providers: [book_service_1.BookService]

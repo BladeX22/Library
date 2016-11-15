@@ -8,9 +8,16 @@ export class BookService {
     getBooks(): Promise<Book[]> {
         return Promise.resolve(BOOKS);
     }
-    //
-    // getBooksForCategory(category: Category): Promise<Book[]> {
-    //     BOOKS.fil
-    // }
-    // categoryFilter(element: Book, )
+
+    getBooksForCategory(category: Category): Promise<Book[]> {
+        var allBooks = BOOKS;
+        var books = [];
+        for (var book of allBooks) {
+            if (book.category === category) {
+                console.log(book);
+                books.push(book);
+            }
+        }
+        return Promise.resolve(books);
+    }
 }

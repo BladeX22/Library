@@ -22,10 +22,11 @@ export class CategoryComponent implements OnInit {
 
     onSelect(category: Category): void{
         this.selectedCategory = category;
-        console.log(category);
     }
 
     ngOnInit(): void {
-        this.getCategories();
+        if(!this.selectedCategory) {
+            this.getCategories();
+        }
     }
 }

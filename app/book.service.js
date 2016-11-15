@@ -16,6 +16,18 @@ var BookService = (function () {
     BookService.prototype.getBooks = function () {
         return Promise.resolve(book_manager_1.BOOKS);
     };
+    BookService.prototype.getBooksForCategory = function (category) {
+        var allBooks = book_manager_1.BOOKS;
+        var books = [];
+        for (var _i = 0, allBooks_1 = allBooks; _i < allBooks_1.length; _i++) {
+            var book = allBooks_1[_i];
+            if (book.category === category) {
+                console.log(book);
+                books.push(book);
+            }
+        }
+        return Promise.resolve(books);
+    };
     BookService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

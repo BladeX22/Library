@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var content_component_1 = require("./content.component");
-var book_component_1 = require("./book.component");
+var category_component_1 = require("./category.component");
 var routes = [
     {
         path: '',
@@ -24,7 +24,7 @@ var routes = [
     },
     {
         path: 'offer',
-        component: book_component_1.BookComponent
+        component: category_component_1.CategoryComponent
     }
 ];
 var AppRoutingModule = (function () {

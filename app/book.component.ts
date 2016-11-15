@@ -1,35 +1,33 @@
 import {BookService} from "./book.service";
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Book} from "./book";
 import {Category} from "./category";
+import {BOOKS} from "./book-manager";
 
 @Component({
     selector: 'books',
     templateUrl: 'app/book.component.html',
-    styleUrls: [ 'app/library-homepage.css' ],
-    providers: [ BookService ],
+    styleUrls: ['app/library-homepage.css'],
+    providers: [BookService],
 })
 
-export class BookComponent implements OnInit{
-    books: Book[];
+export class BookComponent implements OnChanges{
 
-    constructor(private bookService: BookService) {}
+    books: Book[] = BOOKS;
+    @Input()
+    selectedCategory: Category;
+
+    constructor(private bookService: BookService) {
+    }
 
     getBooks(): void {
         this.bookService.getBooks().then(books => this.books = books);
     }
 
-    findAllBooksForCategory(category: Category): void{
-        let books: Book[];
-        for (var book of this.books){
-            if(book.category == category){
-                books.push(book);
-            }
-        }
-        console.log(books);
-    }
-
-    ngOnInit(): void {
-        this.getBooks();
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(changes["selectedCategory"]);
+        let chng = changes["selectedCategory"];
+        this.bookService.getBooksForCategory(chng.currentValue).then(books => this.books = books);
+        console.log(this.books);
     }
 }

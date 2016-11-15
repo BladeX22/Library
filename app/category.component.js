@@ -22,10 +22,11 @@ var CategoryComponent = (function () {
     };
     CategoryComponent.prototype.onSelect = function (category) {
         this.selectedCategory = category;
-        console.log(category);
     };
     CategoryComponent.prototype.ngOnInit = function () {
-        this.getCategories();
+        if (!this.selectedCategory) {
+            this.getCategories();
+        }
     };
     CategoryComponent = __decorate([
         core_1.Component({
