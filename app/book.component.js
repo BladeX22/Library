@@ -23,10 +23,8 @@ var BookComponent = (function () {
     };
     BookComponent.prototype.ngOnChanges = function (changes) {
         var _this = this;
-        console.log(changes["selectedCategory"]);
-        var chng = changes["selectedCategory"];
-        this.bookService.getBooksForCategory(chng.currentValue).then(function (books) { return _this.books = books; });
-        console.log(this.books);
+        var selectedCategory = changes["selectedCategory"];
+        this.bookService.getBooksForCategory(selectedCategory.currentValue).then(function (books) { return _this.books = books; });
     };
     __decorate([
         core_1.Input(), 

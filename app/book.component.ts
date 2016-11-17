@@ -25,9 +25,7 @@ export class BookComponent implements OnChanges{
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(changes["selectedCategory"]);
-        let chng = changes["selectedCategory"];
-        this.bookService.getBooksForCategory(chng.currentValue).then(books => this.books = books);
-        console.log(this.books);
+        let selectedCategory = changes["selectedCategory"];
+        this.bookService.getBooksForCategory(selectedCategory.currentValue).then(books => this.books = books);
     }
 }

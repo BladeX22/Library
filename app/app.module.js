@@ -15,15 +15,15 @@ var content_component_1 = require("./content.component");
 var category_component_1 = require("./category.component");
 var book_component_1 = require("./book.component");
 var app_routing_module_1 = require("./app-routing.module");
-var forms_1 = require("@angular/forms");
+var new_book_component_1 = require("./new_book.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, content_component_1.ContentComponent, category_component_1.CategoryComponent, book_component_1.BookComponent, forms_1.FormsModule],
-            bootstrap: [app_component_1.AppComponent, content_component_1.ContentComponent]
+            declarations: [app_component_1.AppComponent, content_component_1.ContentComponent, category_component_1.CategoryComponent, book_component_1.BookComponent, new_book_component_1.NewBookComponent],
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

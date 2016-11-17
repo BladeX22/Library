@@ -5,10 +5,11 @@ import {ContentComponent} from "./content.component";
 import {CategoryComponent} from "./category.component";
 import {BookComponent} from "./book.component";
 import {AppRoutingModule} from "./app-routing.module";
-import {FormsModule} from "@angular/forms";
+import {NewBookComponent} from "./new_book.component";
+
 @NgModule({
     imports:      [ BrowserModule, AppRoutingModule ],
-    declarations: [ AppComponent, ContentComponent, CategoryComponent, BookComponent, FormsModule],
-    bootstrap:    [ AppComponent, ContentComponent]
+    declarations: [ AppComponent, ContentComponent, CategoryComponent, BookComponent, NewBookComponent],
+    bootstrap:    [ AppComponent]
 })
 export class AppModule { }

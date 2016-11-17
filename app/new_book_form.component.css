@@ -1,0 +1,10 @@
+.new-book-form{
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+.small{
+    width: 50%;
+    vertical-align:top;
+}
