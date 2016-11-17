@@ -6,6 +6,7 @@ import {CategoryComponent} from "./category.component";
 import {BookComponent} from "./book.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {NewBookComponent} from "./new_book.component";
+import {MultiselectDropdownModule} from "angular-2-dropdown-multiselect/src/multiselect-dropdown";
 
 @NgModule({
     imports:      [ BrowserModule, AppRoutingModule ],

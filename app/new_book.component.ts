@@ -1,4 +1,7 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {IMultiSelectOption} from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
+
+declare var jQuery: any;
 
 @Component({
     selector: 'new_book',
@@ -7,4 +10,9 @@ import {Component} from "@angular/core";
 })
 
 export class NewBookComponent{
+    // private selectedOptions: number[];
+    // private myOptions: IMultiSelectOption[] = [
+    //     { id: 1, name: 'Option 1' },
+    //     { id: 2, name: 'Option 2' },
+    // ];
 }
