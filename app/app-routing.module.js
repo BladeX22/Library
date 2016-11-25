@@ -13,6 +13,7 @@ var router_1 = require("@angular/router");
 var content_component_1 = require("./content.component");
 var category_component_1 = require("./category.component");
 var new_book_component_1 = require("./new_book.component");
+var book_detail_component_1 = require("./book-detail.component");
 var routes = [
     {
         path: '',
@@ -30,6 +31,10 @@ var routes = [
     {
         path: 'add_book',
         component: new_book_component_1.NewBookComponent
+    },
+    {
+        path: 'book_detail/:id',
+        component: book_detail_component_1.BookDetail
     }
 ];
 var AppRoutingModule = (function () {

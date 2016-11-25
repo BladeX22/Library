@@ -3,6 +3,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Book} from "./book";
 import {Category} from "./category";
 import {BOOKS} from "./book-manager";
+import {Router} from "@angular/router";
 
 @Component({
     selector: 'books',
@@ -17,7 +18,9 @@ export class BookComponent implements OnChanges{
     @Input()
     selectedCategory: Category;
 
-    constructor(private bookService: BookService) {
+    constructor(
+        private router: Router,
+        private bookService: BookService) {
     }
 
     getBooks(): void {
@@ -27,5 +30,10 @@ export class BookComponent implements OnChanges{
     ngOnChanges(changes: SimpleChanges): void {
         let selectedCategory = changes["selectedCategory"];
         this.bookService.getBooksForCategory(selectedCategory.currentValue).then(books => this.books = books);
+    }
+
+    gotoDetails(book: Book): void {
+        let link = ['book_detail', book.id];
+        this.router.navigate(link);
     }
 }

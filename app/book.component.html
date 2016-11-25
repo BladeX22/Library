@@ -4,8 +4,7 @@
             <img src="http://placehold.it/320x150" alt="">
             <div class="caption">
                 <h4 class="pull-right">${{ book.price }}</h4>
-                <h4><a href="#">{{ book.name }}</a>
-                </h4>
+                <h4 (click)="gotoDetails(book)">{{ book.name }}</h4>
                 <p>{{ book.author }}</p>
             </div>
             <div class="ratings">

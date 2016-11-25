@@ -12,8 +12,10 @@ var book_service_1 = require("./book.service");
 var core_1 = require('@angular/core');
 var category_1 = require("./category");
 var book_manager_1 = require("./book-manager");
+var router_1 = require("@angular/router");
 var BookComponent = (function () {
-    function BookComponent(bookService) {
+    function BookComponent(router, bookService) {
+        this.router = router;
         this.bookService = bookService;
         this.books = book_manager_1.BOOKS;
     }
@@ -26,6 +28,10 @@ var BookComponent = (function () {
         var selectedCategory = changes["selectedCategory"];
         this.bookService.getBooksForCategory(selectedCategory.currentValue).then(function (books) { return _this.books = books; });
     };
+    BookComponent.prototype.gotoDetails = function (book) {
+        var link = ['book_detail', book.id];
+        this.router.navigate(link);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', category_1.Category)
@@ -37,7 +43,7 @@ var BookComponent = (function () {
             styleUrls: ['app/library-homepage.css'],
             providers: [book_service_1.BookService],
         }), 
-        __metadata('design:paramtypes', [book_service_1.BookService])
+        __metadata('design:paramtypes', [router_1.Router, book_service_1.BookService])
     ], BookComponent);
     return BookComponent;
 }());

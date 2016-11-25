@@ -28,6 +28,10 @@ var BookService = (function () {
         }
         return Promise.resolve(books);
     };
+    BookService.prototype.getBook = function (id) {
+        return this.getBooks()
+            .then(function (books) { return books.find(function (book) { return book.id === id; }); });
+    };
     BookService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

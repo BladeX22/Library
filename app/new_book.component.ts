@@ -1,5 +1,4 @@
 import {Component, Input} from "@angular/core";
-import {IMultiSelectOption} from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 
 declare var jQuery: any;
 
