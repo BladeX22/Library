@@ -9,24 +9,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" routerLink="/dashboard">Wypożyczalnia książek</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li routerLinkActive="active">
+                    <a class="navbar-brand" [routerLink]="['/dashboard']">Wypożyczalnia książek</a>
+                </li>
                 <li>
                     <a>O Nas</a>
                 </li>
-                <li class="active">
-                    <a routerLink="/offer">Oferta</a>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/offer']">Oferta</a>
                 </li>
                 <li>
                     <a>Kontakt</a>
                 </li>
-                <li>
-                    <a routerLink="/add_book">Dodaj książkę</a>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/add_book']">Dodaj książkę</a>
                 </li>
             </ul>
+            <div class="input-group col-md-4 book_search">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+            </div>
         </div>
     </div>
 </nav>

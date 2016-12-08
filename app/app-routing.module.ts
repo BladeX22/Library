@@ -1,8 +1,7 @@
 
 import {NgModule} from "@angular/core";
-import {RouterModule} from "@angular/router";
+import {RouterModule, Router} from "@angular/router";
 import {ContentComponent} from "./content.component";
-import {BookComponent} from "./book/book.component";
 import {CategoryComponent} from "./category/category.component";
 import {NewBookComponent} from "./book/new_book.component";
 import {BookDetail} from "./book/book-detail.component";
@@ -36,4 +35,12 @@ const routes = [
     exports: [ RouterModule ]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule {
+
+    constructor(private router: Router){}
+
+    isActive(route : string): boolean {
+        console.log(this.router.url == route);
+        return this.router.url == route;
+    }
+}

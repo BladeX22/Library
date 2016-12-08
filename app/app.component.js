@@ -16,7 +16,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'navigation',
             templateUrl: 'app/navigation.html',
-            styleUrls: ['app/library-homepage.css']
+            styleUrls: ['app/library-homepage.css', 'app/search.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

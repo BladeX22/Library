@@ -38,14 +38,19 @@ var routes = [
     }
 ];
 var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+    function AppRoutingModule(router) {
+        this.router = router;
     }
+    AppRoutingModule.prototype.isActive = function (route) {
+        console.log(this.router.url == route);
+        return this.router.url == route;
+    };
     AppRoutingModule = __decorate([
         core_1.NgModule({
             imports: [router_1.RouterModule.forRoot(routes)],
             exports: [router_1.RouterModule]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], AppRoutingModule);
     return AppRoutingModule;
 }());
