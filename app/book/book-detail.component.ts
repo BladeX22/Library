@@ -5,8 +5,8 @@ import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
     selector: 'book_details',
-    templateUrl: 'app/book-detail.component.html',
-    styleUrls: [ 'app/book-detail.component.css' ],
+    templateUrl: 'app/book/book-detail.component.html',
+    styleUrls: [ 'app/book/book-detail.component.css' ],
     providers: [BookService]
 })
 

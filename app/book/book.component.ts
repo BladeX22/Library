@@ -1,13 +1,13 @@
 import {BookService} from "./book.service";
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {Book} from "./book";
-import {Category} from "./category";
+import {Category} from "../category/category";
 import {BOOKS} from "./book-manager";
 import {Router} from "@angular/router";
 
 @Component({
     selector: 'books',
-    templateUrl: 'app/book.component.html',
+    templateUrl: 'app/book/book.component.html',
     styleUrls: ['app/library-homepage.css'],
     providers: [BookService],
 })

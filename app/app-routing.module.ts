@@ -2,10 +2,10 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {ContentComponent} from "./content.component";
-import {BookComponent} from "./book.component";
-import {CategoryComponent} from "./category.component";
-import {NewBookComponent} from "./new_book.component";
-import {BookDetail} from "./book-detail.component";
+import {BookComponent} from "./book/book.component";
+import {CategoryComponent} from "./category/category.component";
+import {NewBookComponent} from "./book/new_book.component";
+import {BookDetail} from "./book/book-detail.component";
 
 const routes = [
     {

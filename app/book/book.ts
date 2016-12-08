@@ -1,4 +1,4 @@
-import {Category} from "./category";
+import {Category} from "../category/category";
 export class Book {
     id: number;
     name: string;

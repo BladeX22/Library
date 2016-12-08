@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Book} from "./book";
 import {BOOKS} from "./book-manager";
-import {Category} from "./category";
+import {Category} from "../category/category";
 
 @Injectable()
 export class BookService {

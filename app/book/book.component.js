@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var book_service_1 = require("./book.service");
 var core_1 = require('@angular/core');
-var category_1 = require("./category");
+var category_1 = require("../category/category");
 var book_manager_1 = require("./book-manager");
 var router_1 = require("@angular/router");
 var BookComponent = (function () {
@@ -39,7 +39,7 @@ var BookComponent = (function () {
     BookComponent = __decorate([
         core_1.Component({
             selector: 'books',
-            templateUrl: 'app/book.component.html',
+            templateUrl: 'app/book/book.component.html',
             styleUrls: ['app/library-homepage.css'],
             providers: [book_service_1.BookService],
         }), 

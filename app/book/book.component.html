@@ -1,9 +1,8 @@
 <div class="row" *ngIf="books">
-    <div *ngFor="let book of books" class="col-sm-2 col-lg-2 col-md-2">
+    <div *ngFor="let book of books" class="col-sm-2 col-lg-3 col-md-2">
         <div class="thumbnail">
-            <img src="http://placehold.it/320x150" alt="">
+            <img src="http://placehold.it/220x150" alt="">
             <div class="caption">
-                <h4 class="pull-right">${{ book.price }}</h4>
                 <h4 (click)="gotoDetails(book)">{{ book.name }}</h4>
                 <p>{{ book.author }}</p>
             </div>

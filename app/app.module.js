@@ -12,11 +12,11 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var content_component_1 = require("./content.component");
-var category_component_1 = require("./category.component");
-var book_component_1 = require("./book.component");
+var category_component_1 = require("./category/category.component");
+var book_component_1 = require("./book/book.component");
 var app_routing_module_1 = require("./app-routing.module");
-var new_book_component_1 = require("./new_book.component");
-var book_detail_component_1 = require("./book-detail.component");
+var new_book_component_1 = require("./book/new_book.component");
+var book_detail_component_1 = require("./book/book-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }

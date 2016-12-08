@@ -31,8 +31,8 @@ var CategoryComponent = (function () {
     CategoryComponent = __decorate([
         core_1.Component({
             selector: 'categories',
-            templateUrl: 'app/category.component.html',
-            styleUrls: ['app/category.component.css'],
+            templateUrl: 'app/category/category.component.html',
+            styleUrls: ['app/category/category.component.css', 'app/offer.css'],
             providers: [category_service_1.CategoryService],
         }), 
         __metadata('design:paramtypes', [category_service_1.CategoryService])

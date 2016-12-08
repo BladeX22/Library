@@ -15,8 +15,8 @@ var NewBookComponent = (function () {
     NewBookComponent = __decorate([
         core_1.Component({
             selector: 'new_book',
-            templateUrl: 'app/new_book_form.component.html',
-            styleUrls: ['app/new_book_form.component.css', 'app/library-homepage.css'],
+            templateUrl: 'app/book/new_book_form.component.html',
+            styleUrls: ['app/book/new_book_form.component.css', 'app/library-homepage.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], NewBookComponent);

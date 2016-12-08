@@ -32,8 +32,8 @@ var BookDetail = (function () {
     BookDetail = __decorate([
         core_1.Component({
             selector: 'book_details',
-            templateUrl: 'app/book-detail.component.html',
-            styleUrls: ['app/book-detail.component.css'],
+            templateUrl: 'app/book/book-detail.component.html',
+            styleUrls: ['app/book/book-detail.component.css'],
             providers: [book_service_1.BookService]
         }), 
         __metadata('design:paramtypes', [book_service_1.BookService, router_1.ActivatedRoute])

@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var content_component_1 = require("./content.component");
-var category_component_1 = require("./category.component");
-var new_book_component_1 = require("./new_book.component");
-var book_detail_component_1 = require("./book-detail.component");
+var category_component_1 = require("./category/category.component");
+var new_book_component_1 = require("./book/new_book.component");
+var book_detail_component_1 = require("./book/book-detail.component");
 var routes = [
     {
         path: '',
