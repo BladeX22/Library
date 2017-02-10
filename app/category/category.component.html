@@ -1,16 +1,10 @@
 <div class="offer">
-<div class="col-md-3" *ngIf="categories">
+<div class="col-md-3" *ngIf="genres" >
     <p class="lead">Gatunki</p>
-    <div class="list-group" *ngFor="let category of categories"
-         (click)="onSelect(category)">
-        <a class="list-group-item">{{ category.name }}</a>
+    <div class="list-group" *ngFor="let genre of genres"
+         routerLinkActive="active">
+        <a class="list-group-item" [routerLink]="[genre.name]">{{ genre.name }}</a>
     </div>
 </div>
-
-<div class="col-md-9" *ngIf="selectedCategory">
-    <books [selectedCategory] = "selectedCategory"> Load</books>
-</div>
-<div class="col-md-9" *ngIf="!selectedCategory">
-    <books> Load</books>
-</div>
+    <router-outlet></router-outlet>
 </div>

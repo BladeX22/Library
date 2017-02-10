@@ -1,26 +1,31 @@
 import {OnInit, Component} from "@angular/core";
 import {CategoryService} from "./category.service";
-import {Category} from "./category";
-
+import {Genre} from "./genre";
 
 @Component({
-    selector: 'categories',
+    selector: 'genres',
     templateUrl: 'app/category/category.component.html',
     styleUrls: [ 'app/category/category.component.css', 'app/offer.css' ],
     providers: [ CategoryService ],
 })
 
 export class CategoryComponent implements OnInit {
-    categories: Category[];
-    selectedCategory: Category;
-    constructor(private categoryService: CategoryService){};
+    genres: Genre[];
+    selectedCategory: Genre;
+    constructor(
+        private categoryService: CategoryService){};
 
     getCategories() :void {
         this.categoryService.getCategories()
-            .then(categories => this.categories = categories);
+            .subscribe(
+              genres => this.genres = genres,
+                err =>{
+                    console.log(err);
+                }
+            );
     }
 
-    onSelect(category: Category): void{
+    onSelect(category: Genre): void{
         this.selectedCategory = category;
     }
 

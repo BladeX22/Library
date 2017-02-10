@@ -18,7 +18,9 @@ var CategoryComponent = (function () {
     CategoryComponent.prototype.getCategories = function () {
         var _this = this;
         this.categoryService.getCategories()
-            .then(function (categories) { return _this.categories = categories; });
+            .subscribe(function (genres) { return _this.genres = genres; }, function (err) {
+            console.log(err);
+        });
     };
     CategoryComponent.prototype.onSelect = function (category) {
         this.selectedCategory = category;
@@ -30,7 +32,7 @@ var CategoryComponent = (function () {
     };
     CategoryComponent = __decorate([
         core_1.Component({
-            selector: 'categories',
+            selector: 'genres',
             templateUrl: 'app/category/category.component.html',
             styleUrls: ['app/category/category.component.css', 'app/offer.css'],
             providers: [category_service_1.CategoryService],

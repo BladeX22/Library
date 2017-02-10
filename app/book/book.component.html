@@ -1,13 +1,13 @@
-<div class="row" *ngIf="books">
+<div class="row col-md-9" *ngIf="books">
     <div *ngFor="let book of books" class="col-sm-2 col-lg-3 col-md-2">
         <div class="thumbnail">
             <img src="http://placehold.it/220x150" alt="">
             <div class="caption">
-                <h4 (click)="gotoDetails(book)">{{ book.name }}</h4>
-                <p>{{ book.author }}</p>
+                <h4 (click)="goToDetails(book)">{{ book.title }}</h4>
+                <p>{{ book.getAuthors() }}</p>
             </div>
             <div class="ratings">
-                <p class="pull-right">{{ book.numOfRates }} głosów</p>
+                <p class="pull-right">{{ book.numberOfRates }} głosów</p>
                 <p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>

@@ -14,6 +14,8 @@ var content_component_1 = require("./content.component");
 var category_component_1 = require("./category/category.component");
 var new_book_component_1 = require("./book/new_book.component");
 var book_detail_component_1 = require("./book/book-detail.component");
+var book_genre_component_1 = require("./book/book-genre.component");
+var book_component_1 = require("./book/book.component");
 var routes = [
     {
         path: '',
@@ -26,7 +28,22 @@ var routes = [
     },
     {
         path: 'offer',
-        component: category_component_1.CategoryComponent
+        component: category_component_1.CategoryComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'all',
+                pathMatch: 'full'
+            },
+            {
+                path: 'all',
+                component: book_component_1.BookComponent
+            },
+            {
+                path: ':genre',
+                component: book_genre_component_1.BookGenreComponent
+            }
+        ]
     },
     {
         path: 'add_book',
@@ -34,7 +51,11 @@ var routes = [
     },
     {
         path: 'book_detail/:id',
-        component: book_detail_component_1.BookDetail
+        component: book_detail_component_1.BookDetailComponent
+    },
+    {
+        path: 'genres',
+        component: category_component_1.CategoryComponent
     }
 ];
 var AppRoutingModule = (function () {

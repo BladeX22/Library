@@ -8,29 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var book_service_1 = require("./book.service");
 var router_1 = require("@angular/router");
-var BookDetailComponent = (function () {
-    function BookDetailComponent(bookService, route) {
+var book_service_1 = require("./book.service");
+var core_1 = require("@angular/core");
+var BookGenreComponent = (function () {
+    function BookGenreComponent(bookService, route) {
         this.bookService = bookService;
         this.route = route;
-        this.title = 'Tytuł:';
-        this.description = 'Opis:';
-        this.numOfPages = 'Liczba stron:';
-        this.categories = 'Kategorie';
-        this.author = 'Autor';
     }
-    BookDetailComponent.prototype.ngOnInit = function () {
+    BookGenreComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.route.params.forEach(function (params) {
-            var id = +params['id'];
-            _this.bookService.getBook(id).subscribe(function (book) { return _this.book = book; }, function (err) {
+        this.route.params.subscribe(function (params) {
+            _this.bookService.findBooksForGenreName(params['genre']).subscribe(function (books) { return _this.books = books; }, function (err) {
                 console.log(err);
             });
         });
     };
-    BookDetailComponent = __decorate([
+    BookGenreComponent = __decorate([
         core_1.Component({
             selector: 'book_details',
             templateUrl: 'app/book/book-detail.component.html',
@@ -38,8 +32,8 @@ var BookDetailComponent = (function () {
             providers: [book_service_1.BookService]
         }), 
         __metadata('design:paramtypes', [book_service_1.BookService, router_1.ActivatedRoute])
-    ], BookDetailComponent);
-    return BookDetailComponent;
+    ], BookGenreComponent);
+    return BookGenreComponent;
 }());
-exports.BookDetailComponent = BookDetailComponent;
-//# sourceMappingURL=book-detail.component.js.map
+exports.BookGenreComponent = BookGenreComponent;
+//# sourceMappingURL=book_genre.component.js.map

@@ -10,7 +10,7 @@ import {ActivatedRoute, Params} from "@angular/router";
     providers: [BookService]
 })
 
-export class BookDetail implements OnInit {
+export class BookDetailComponent implements OnInit {
     title = 'Tytuł:';
     description = 'Opis:';
     numOfPages = 'Liczba stron:';
@@ -25,8 +25,12 @@ export class BookDetail implements OnInit {
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = +params['id'];
-            this.bookService.getBook(id)
-                .then(book => this.book = book);
+            this.bookService.getBook(id).subscribe(
+                    book => this.book = book,
+                    err =>{
+                        console.log(err);
+                    }
+                );
             });
     }
 

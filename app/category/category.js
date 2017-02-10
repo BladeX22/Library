@@ -1,6 +1,8 @@
 "use strict";
 var Category = (function () {
-    function Category() {
+    function Category(id, name) {
+        this.id = id;
+        this.name = name;
     }
     return Category;
 }());

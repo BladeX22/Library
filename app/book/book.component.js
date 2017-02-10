@@ -10,32 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var book_service_1 = require("./book.service");
 var core_1 = require('@angular/core');
-var category_1 = require("../category/category");
-var book_manager_1 = require("./book-manager");
 var router_1 = require("@angular/router");
 var BookComponent = (function () {
     function BookComponent(router, bookService) {
         this.router = router;
         this.bookService = bookService;
-        this.books = book_manager_1.BOOKS;
     }
-    BookComponent.prototype.getBooks = function () {
+    BookComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.bookService.getBooks().then(function (books) { return _this.books = books; });
+        this.bookService.findAll().subscribe(function (books) {
+            _this.books = books;
+        }, function (err) {
+            console.log(err);
+        });
     };
-    BookComponent.prototype.ngOnChanges = function (changes) {
-        var _this = this;
-        var selectedCategory = changes["selectedCategory"];
-        this.bookService.getBooksForCategory(selectedCategory.currentValue).then(function (books) { return _this.books = books; });
-    };
-    BookComponent.prototype.gotoDetails = function (book) {
+    BookComponent.prototype.goToDetails = function (book) {
         var link = ['book_detail', book.id];
         this.router.navigate(link);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', category_1.Category)
-    ], BookComponent.prototype, "selectedCategory", void 0);
     BookComponent = __decorate([
         core_1.Component({
             selector: 'books',

@@ -9,16 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var category_manager_1 = require("./category-manager");
+var http_1 = require('@angular/http');
+var Rx_1 = require("rxjs/Rx");
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
 var CategoryService = (function () {
-    function CategoryService() {
+    function CategoryService(http) {
+        this.http = http;
+        this.allGenresUrl = 'http://library.local/app_dev.php/genre/all';
     }
+    ;
     CategoryService.prototype.getCategories = function () {
-        return Promise.resolve(category_manager_1.CATEGORIES);
+        return this.http.get(this.allGenresUrl)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
     };
     CategoryService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], CategoryService);
     return CategoryService;
 }());

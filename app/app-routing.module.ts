@@ -4,7 +4,9 @@ import {RouterModule, Router} from "@angular/router";
 import {ContentComponent} from "./content.component";
 import {CategoryComponent} from "./category/category.component";
 import {NewBookComponent} from "./book/new_book.component";
-import {BookDetail} from "./book/book-detail.component";
+import {BookDetailComponent} from "./book/book-detail.component";
+import {BookGenreComponent} from "./book/book-genre.component";
+import {BookComponent} from "./book/book.component";
 
 const routes = [
     {
@@ -18,7 +20,22 @@ const routes = [
     },
     {
         path: 'offer',
-        component: CategoryComponent
+        component: CategoryComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'all',
+                pathMatch: 'full'
+            },
+            {
+                path: 'all',
+                component: BookComponent
+            },
+            {
+                path: ':genre',
+                component: BookGenreComponent
+            }
+        ]
     },
     {
         path: 'add_book',
@@ -26,7 +43,11 @@ const routes = [
     },
     {
         path: 'book_detail/:id',
-        component: BookDetail
+        component: BookDetailComponent
+    },
+    {
+        path: 'genres',
+        component: CategoryComponent
     }
 ];
 

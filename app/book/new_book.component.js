@@ -9,16 +9,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var category_service_1 = require("../category/category.service");
 var NewBookComponent = (function () {
-    function NewBookComponent() {
+    function NewBookComponent(categoryService) {
+        this.categoryService = categoryService;
+        this.mySettings = {
+            pullRight: false,
+            enableSearch: false,
+            checkedStyle: 'glyphicon',
+            buttonClasses: 'btn btn-default',
+            selectionLimit: 0,
+            closeOnSelect: false,
+            showCheckAll: false,
+            showUncheckAll: false,
+            dynamicTitleMaxItems: 6,
+            maxHeight: '600px',
+        };
+        this.myTexts = {
+            checkAll: 'Check all',
+            uncheckAll: 'Uncheck all',
+            checked: 'checked',
+            checkedPlural: 'checked',
+            searchPlaceholder: 'Search...',
+            defaultTitle: 'Select',
+        };
     }
+    ;
+    NewBookComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.categoryService.getCategories().subscribe(function (categories) {
+            _this.categoryOptions = categories;
+        }, function (err) {
+            console.log(err);
+        });
+    };
     NewBookComponent = __decorate([
         core_1.Component({
             selector: 'new_book',
             templateUrl: 'app/book/new_book_form.component.html',
             styleUrls: ['app/book/new_book_form.component.css', 'app/library-homepage.css'],
+            providers: [category_service_1.CategoryService],
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [category_service_1.CategoryService])
     ], NewBookComponent);
     return NewBookComponent;
 }());

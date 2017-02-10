@@ -11,19 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
+var forms_1 = require('@angular/forms');
 var content_component_1 = require("./content.component");
 var category_component_1 = require("./category/category.component");
 var book_component_1 = require("./book/book.component");
 var app_routing_module_1 = require("./app-routing.module");
 var new_book_component_1 = require("./book/new_book.component");
 var book_detail_component_1 = require("./book/book-detail.component");
+var multiselect_dropdown_1 = require("angular-2-dropdown-multiselect/src/multiselect-dropdown");
+var http_1 = require('@angular/http');
+var book_genre_component_1 = require("./book/book-genre.component");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, content_component_1.ContentComponent, category_component_1.CategoryComponent, book_component_1.BookComponent, new_book_component_1.NewBookComponent, book_detail_component_1.BookDetail],
+            imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule, multiselect_dropdown_1.MultiselectDropdownModule,
+                forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule],
+            declarations: [app_component_1.AppComponent, content_component_1.ContentComponent,
+                category_component_1.CategoryComponent, book_component_1.BookComponent, new_book_component_1.NewBookComponent, book_detail_component_1.BookDetailComponent, book_genre_component_1.BookGenreComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
