@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var book_service_1 = require("./book.service");
 var router_1 = require("@angular/router");
@@ -30,16 +31,17 @@ var BookDetailComponent = (function () {
             });
         });
     };
-    BookDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'book_details',
-            templateUrl: 'app/book/book-detail.component.html',
-            styleUrls: ['app/book/book-detail.component.css'],
-            providers: [book_service_1.BookService]
-        }), 
-        __metadata('design:paramtypes', [book_service_1.BookService, router_1.ActivatedRoute])
-    ], BookDetailComponent);
     return BookDetailComponent;
 }());
+BookDetailComponent = __decorate([
+    core_1.Component({
+        selector: 'book_details',
+        templateUrl: 'app/book/book-detail.component.html',
+        styleUrls: ['app/book/book-detail.component.css'],
+        providers: [book_service_1.BookService]
+    }),
+    __metadata("design:paramtypes", [book_service_1.BookService,
+        router_1.ActivatedRoute])
+], BookDetailComponent);
 exports.BookDetailComponent = BookDetailComponent;
 //# sourceMappingURL=book-detail.component.js.map

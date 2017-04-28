@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
 var book_1 = require("./book");
 var Rx_1 = require("rxjs/Rx");
-require('rxjs/add/operator/map');
-require('rxjs/add/operator/catch');
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/catch");
 var author_1 = require("../author/author");
 var genre_1 = require("../category/genre");
 var BookService = (function () {
@@ -56,11 +57,11 @@ var BookService = (function () {
             return new book_1.Book(elt.id, elt.title, elt.description, 200, authors, elt.numberOfRates, genres);
         });
     };
-    BookService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], BookService);
     return BookService;
 }());
+BookService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], BookService);
 exports.BookService = BookService;
 //# sourceMappingURL=book.service.js.map

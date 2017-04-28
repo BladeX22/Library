@@ -5,11 +5,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var OrderBy = (function () {
+var OrderBy = OrderBy_1 = (function () {
     function OrderBy() {
     }
     OrderBy._orderByComparator = function (a, b) {
@@ -46,8 +44,8 @@ var OrderBy = (function () {
                     : propertyToCheck;
                 return input.sort(function (a, b) {
                     return !desc
-                        ? OrderBy._orderByComparator(a[property], b[property])
-                        : -OrderBy._orderByComparator(a[property], b[property]);
+                        ? OrderBy_1._orderByComparator(a[property], b[property])
+                        : -OrderBy_1._orderByComparator(a[property], b[property]);
                 });
             }
         }
@@ -60,8 +58,8 @@ var OrderBy = (function () {
                         ? config[i].substr(1)
                         : config[i];
                     var comparison = !desc
-                        ? OrderBy._orderByComparator(a[property], b[property])
-                        : -OrderBy._orderByComparator(a[property], b[property]);
+                        ? OrderBy_1._orderByComparator(a[property], b[property])
+                        : -OrderBy_1._orderByComparator(a[property], b[property]);
                     //Don't return 0 yet in case of needing to sort by next property
                     if (comparison != 0)
                         return comparison;
@@ -70,15 +68,15 @@ var OrderBy = (function () {
             });
         }
     };
-    OrderBy = __decorate([
-        core_1.Pipe({
-            name: "orderBy",
-            pure: false
-        }),
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], OrderBy);
     return OrderBy;
 }());
+OrderBy = OrderBy_1 = __decorate([
+    core_1.Pipe({
+        name: "orderBy",
+        pure: false
+    }),
+    core_1.Injectable()
+], OrderBy);
 exports.OrderBy = OrderBy;
+var OrderBy_1;
 //# sourceMappingURL=order-by.component.js.map

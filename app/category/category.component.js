@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var category_service_1 = require("./category.service");
 var CategoryComponent = (function () {
@@ -30,16 +31,16 @@ var CategoryComponent = (function () {
             this.getCategories();
         }
     };
-    CategoryComponent = __decorate([
-        core_1.Component({
-            selector: 'genres',
-            templateUrl: 'app/category/category.component.html',
-            styleUrls: ['app/category/category.component.css', 'app/offer.css'],
-            providers: [category_service_1.CategoryService],
-        }), 
-        __metadata('design:paramtypes', [category_service_1.CategoryService])
-    ], CategoryComponent);
     return CategoryComponent;
 }());
+CategoryComponent = __decorate([
+    core_1.Component({
+        selector: 'genres',
+        templateUrl: 'app/category/category.component.html',
+        styleUrls: ['app/category/category.component.css', 'app/offer.css'],
+        providers: [category_service_1.CategoryService],
+    }),
+    __metadata("design:paramtypes", [category_service_1.CategoryService])
+], CategoryComponent);
 exports.CategoryComponent = CategoryComponent;
 //# sourceMappingURL=category.component.js.map

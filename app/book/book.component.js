@@ -8,8 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var book_service_1 = require("./book.service");
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var BookComponent = (function () {
     function BookComponent(router, bookService) {
@@ -28,16 +29,17 @@ var BookComponent = (function () {
         var link = ['book_detail', book.id];
         this.router.navigate(link);
     };
-    BookComponent = __decorate([
-        core_1.Component({
-            selector: 'books',
-            templateUrl: 'app/book/book.component.html',
-            styleUrls: ['app/library-homepage.css'],
-            providers: [book_service_1.BookService],
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, book_service_1.BookService])
-    ], BookComponent);
     return BookComponent;
 }());
+BookComponent = __decorate([
+    core_1.Component({
+        selector: 'books',
+        templateUrl: 'app/book/book.component.html',
+        styleUrls: ['app/library-homepage.css'],
+        providers: [book_service_1.BookService],
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        book_service_1.BookService])
+], BookComponent);
 exports.BookComponent = BookComponent;
 //# sourceMappingURL=book.component.js.map

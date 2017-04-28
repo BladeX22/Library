@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = require("@angular/router");
 var book_service_1 = require("./book.service");
 var core_1 = require("@angular/core");
@@ -24,16 +25,17 @@ var BookGenreComponent = (function () {
             });
         });
     };
-    BookGenreComponent = __decorate([
-        core_1.Component({
-            selector: 'book_details',
-            templateUrl: 'app/book/book.component.html',
-            styleUrls: ['app/library-homepage.css'],
-            providers: [book_service_1.BookService]
-        }), 
-        __metadata('design:paramtypes', [book_service_1.BookService, router_1.ActivatedRoute])
-    ], BookGenreComponent);
     return BookGenreComponent;
 }());
+BookGenreComponent = __decorate([
+    core_1.Component({
+        selector: 'book_details',
+        templateUrl: 'app/book/book.component.html',
+        styleUrls: ['app/library-homepage.css'],
+        providers: [book_service_1.BookService]
+    }),
+    __metadata("design:paramtypes", [book_service_1.BookService,
+        router_1.ActivatedRoute])
+], BookGenreComponent);
 exports.BookGenreComponent = BookGenreComponent;
 //# sourceMappingURL=book-genre.component.js.map

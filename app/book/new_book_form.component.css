@@ -5,6 +5,7 @@
 }
 
 .small{
-    width: 50%;
+    width: 46%;
     vertical-align:top;
 }
+.pointer { cursor: pointer; }

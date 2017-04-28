@@ -7,21 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var book_service_1 = require("./book/book.service");
-var ContentComponent = (function () {
-    function ContentComponent() {
+var ObjectIteratorPipe = (function () {
+    function ObjectIteratorPipe() {
     }
-    ContentComponent.prototype.ngOnInit = function () {
+    ObjectIteratorPipe.prototype.transform = function (value, args) {
+        if (args === void 0) { args = null; }
+        return Object.keys(value).map(function (key) { return value[key]; });
     };
-    return ContentComponent;
+    return ObjectIteratorPipe;
 }());
-ContentComponent = __decorate([
-    core_1.Component({
-        selector: 'content',
-        templateUrl: 'app/content.html',
-        styleUrls: ['app/library-homepage.css'],
-        providers: [book_service_1.BookService]
-    })
-], ContentComponent);
-exports.ContentComponent = ContentComponent;
-//# sourceMappingURL=content.component.js.map
+ObjectIteratorPipe = __decorate([
+    core_1.Pipe({ name: 'values', pure: false })
+], ObjectIteratorPipe);
+exports.ObjectIteratorPipe = ObjectIteratorPipe;
+//# sourceMappingURL=ObjectIteratorPipe.js.map
