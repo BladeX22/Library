@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, RequestOptions, Response, Headers} from '@angular/http';
 import {Book} from "./book";
 import {Observable} from "rxjs/Rx";
 
@@ -40,17 +40,48 @@ export class BookService {
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+    createBook(data): Observable<Book> {
+        let createBookUrl = 'http://library.local/app_dev.php/book_info/new';
+
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        headers.append('Accept', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+console.log(JSON.stringify(data));
+        return this.http.post(createBookUrl, JSON.stringify(data), options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+
     private deserialize(res: Response): Book[] {
         return res.json().map((elt) => {
-            var authors = elt.authors.map((elt) => {
+            let authors = elt.authors.map((elt) => {
                 return new Author(elt.id, elt.name, elt.lastName)
             });
-            var genres = elt.genres.map((elt) => {
+            let genres = elt.genres.map((elt) => {
                 return new Genre(elt.id, elt.isActive, elt.name)
             });
 
             return new Book(elt.id, elt.title, elt.description, 200, authors, elt.numberOfRates, genres);
         });
+    }
+
+    private extractData(res: Response) {
+        let body = res.json();
+        return body.data || {};
+    }
+
+    private handleError (error: Response | any) {
+        // In a real world app, you might use a remote logging infrastructure
+        let errMsg: string;
+        if (error instanceof Response) {
+            const body = error.json() || '';
+            const err = body.error || JSON.stringify(body);
+            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+        } else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+
+        return Observable.throw(errMsg);
     }
 
 }

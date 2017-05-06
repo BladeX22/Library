@@ -46,6 +46,16 @@ var BookService = (function () {
             .map(function (res) { return res.json(); })
             .catch(function (error) { return Rx_1.Observable.throw(error.json().error || 'Server error'); });
     };
+    BookService.prototype.createBook = function (data) {
+        var createBookUrl = 'http://library.local/app_dev.php/book_info/new';
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        headers.append('Accept', 'application/json');
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log(JSON.stringify(data));
+        return this.http.post(createBookUrl, JSON.stringify(data), options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     BookService.prototype.deserialize = function (res) {
         return res.json().map(function (elt) {
             var authors = elt.authors.map(function (elt) {
@@ -56,6 +66,23 @@ var BookService = (function () {
             });
             return new book_1.Book(elt.id, elt.title, elt.description, 200, authors, elt.numberOfRates, genres);
         });
+    };
+    BookService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body.data || {};
+    };
+    BookService.prototype.handleError = function (error) {
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        return Rx_1.Observable.throw(errMsg);
     };
     return BookService;
 }());

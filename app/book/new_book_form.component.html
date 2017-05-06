@@ -1,18 +1,26 @@
 <div class="new-book-form">
-    <form class="form-horizontal col-md-12" role="form" [formGroup]="mainForm" (ngSubmit)="submit(mainForm)">
+    <form class="form-horizontal col-md-12" role="form" [formGroup]="mainForm" (ngSubmit)="submit()">
         <div class="form-group">
-            <label for="title" class="col-md-2">Tytuł</label>
-            <input type="text" formControlName="title" class="form-control" id="title" placeholder="Tytuł">
+            <label for="title" class="col-md-2">Title</label>
+            <input type="text" formControlName="title" class="form-control" id="title" placeholder="Title">
             <small class="text-danger">
                 {{ formErrors.title }}
             </small>
         </div>
         <div class="form-group">
-            <label for="isbnNumber" class="col-md-2">Numer ISBN</label>
+            <label for="isbnNumber" class="col-md-2">ISBN Number</label>
             <input type="text" formControlName="isbnNumber" class="form-control" id="isbnNumber"
-                   placeholder="Numer ISBN">
+                   placeholder="ISBN Number">
             <small class="text-danger">
                 {{ formErrors.isbnNumber }}
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="description" class="col-md-2">Description</label>
+            <textarea formControlName="description" class="form-control" id="description"
+                      placeholder="Description"></textarea>
+            <small class="text-danger">
+                {{ formErrors.description }}
             </small>
         </div>
         <div formArrayName="authors" class="form-group">
@@ -28,14 +36,14 @@
                         <label for="name">name</label>
                         <input class="form-control" type="text" formControlName="name" id="name">
                         <small class="text-danger">
-                            {{ formErrors.author.lastName }}
+                            {{ formErrors.authors[i].name }}
                         </small>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="lastName">lastName</label>
                         <input class="form-control" type="text" formControlName="lastName" id="lastName">
                         <small class="text-danger">
-                            {{ formErrors.author.lastName }}
+                            {{ formErrors.authors[i].lastName }}
                         </small>
                     </div>
                 </div>
@@ -51,12 +59,12 @@
             <label for="category2" class="col-md-2">Kategoria</label>
         </div>
         <div class="form-group">
-            <ss-multiselect-dropdown id="category2" [options]="categoryOptions" [texts]="myTexts"
+            <ss-multiselect-dropdown formControlName="genres" id="category2" [options]="categoryOptions" [texts]="myTexts"
                                      [settings]="mySettings" name="genre"></ss-multiselect-dropdown>
         </div>
         <div class="form-group">
             <div class="col-md-12 text-right">
-                <button type="submit" [disabled]="!mainForm.valid" class="btn btn-lg btn-primary">Submit your message!
+                <button type="submit" [disabled]="!mainForm.valid" class="btn btn-lg btn-primary">Save
                 </button>
             </div>
         </div>

@@ -28,7 +28,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, app_routing_module_1.AppRoutingModule, multiselect_dropdown_1.MultiselectDropdownModule,
-            forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule, forms_1.ReactiveFormsModule],
+            forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule, forms_1.ReactiveFormsModule, http_1.JsonpModule],
         declarations: [app_component_1.AppComponent, content_component_1.ContentComponent,
             category_component_1.CategoryComponent, book_component_1.BookComponent, new_book_component_1.NewBookComponent, book_detail_component_1.BookDetailComponent, book_genre_component_1.BookGenreComponent, ObjectIteratorPipe_1.ObjectIteratorPipe],
         bootstrap: [app_component_1.AppComponent]
