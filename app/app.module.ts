@@ -14,10 +14,16 @@ import {BookGenreComponent} from "./book/book-genre.component";
 import {ObjectIteratorPipe} from "./pipe/ObjectIteratorPipe";
 
 @NgModule({
-    imports:      [ BrowserModule,
+    imports:      [
+        BrowserModule,
         AppRoutingModule,
         MultiselectDropdownModule,
-        FormsModule, HttpModule, JsonpModule, ReactiveFormsModule, JsonpModule ],
+        FormsModule,
+        HttpModule,
+        JsonpModule,
+        ReactiveFormsModule,
+        JsonpModule
+    ],
     declarations: [ AppComponent, ContentComponent,
         CategoryComponent, BookComponent, NewBookComponent, BookDetailComponent, BookGenreComponent, ObjectIteratorPipe],
     bootstrap:    [ AppComponent]
