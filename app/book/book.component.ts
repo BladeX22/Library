@@ -31,5 +31,6 @@ export class BookComponent implements OnInit {
     goToDetails(book: Book): void {
         let link = ['book_detail', book.id];
         this.router.navigate(link);
+        console.log('this gonna be conflict, cannot wait to rebase!');
     }
 }
