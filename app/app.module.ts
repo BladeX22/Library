@@ -27,7 +27,11 @@ import {ObjectIteratorPipe} from "./pipe/ObjectIteratorPipe";
     declarations: [ AppComponent, ContentComponent,
         CategoryComponent,
         BookComponent,
-        NewBookComponent, BookDetailComponent, BookGenreComponent, ObjectIteratorPipe],
+        NewBookComponent,
+        BookDetailComponent,
+        BookGenreComponent,
+        ObjectIteratorPipe
+    ],
     bootstrap:    [ AppComponent]
 })
 export class AppModule { }
