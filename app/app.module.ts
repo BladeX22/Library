@@ -25,7 +25,9 @@ import {ObjectIteratorPipe} from "./pipe/ObjectIteratorPipe";
         JsonpModule
     ],
     declarations: [ AppComponent, ContentComponent,
-        CategoryComponent, BookComponent, NewBookComponent, BookDetailComponent, BookGenreComponent, ObjectIteratorPipe],
+        CategoryComponent,
+        BookComponent,
+        NewBookComponent, BookDetailComponent, BookGenreComponent, ObjectIteratorPipe],
     bootstrap:    [ AppComponent]
 })
 export class AppModule { }
