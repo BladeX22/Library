@@ -13,5 +13,6 @@ export class ContentComponent implements OnInit{
     popularBooks: Book[];
 
     ngOnInit(): void {
+        console.log('completely clueless.');
     }
 }
